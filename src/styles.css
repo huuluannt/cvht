@@ -1,0 +1,330 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f7f8fb;
+  color: #111827;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #eef2ff 0%, #ffffff 100%);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.user-shell,
+.admin-shell {
+  display: grid;
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.user-shell {
+  grid-template-columns: 1fr;
+}
+
+.admin-shell {
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: stretch;
+}
+
+.chat-panel,
+.admin-panel {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 18px 60px rgba(15, 23, 42, 0.08);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 2.5vw, 2.4rem);
+}
+
+.mode-pill {
+  background: #eef2ff;
+  color: #3730a3;
+  border-radius: 9999px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+}
+
+.chat-window {
+  display: grid;
+  gap: 16px;
+  max-height: 55vh;
+  overflow-y: auto;
+  padding-right: 8px;
+  margin-bottom: 20px;
+}
+
+.chat-message {
+  padding: 18px 20px;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+}
+
+.chat-message.assistant {
+  background: #eef2ff;
+}
+
+.chat-message.user {
+  background: #ffffff;
+}
+
+.message-role {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.message-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.chat-controls {
+  display: grid;
+  gap: 16px;
+}
+
+.input-group {
+  display: grid;
+  gap: 8px;
+}
+
+.input-group span {
+  font-weight: 600;
+}
+
+textarea,
+input,
+select {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 16px;
+  padding: 14px 16px;
+  background: #f8fafc;
+  outline: none;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+.settings-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.provider-stack label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 180px;
+}
+
+.key-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.key-actions button,
+.action-row button,
+.admin-link {
+  border: none;
+  border-radius: 14px;
+  background: #4338ca;
+  color: #ffffff;
+  padding: 12px 18px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.key-box {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.key-box input {
+  flex: 1;
+}
+
+.delete-key {
+  background: #ef4444;
+}
+
+.error-box {
+  color: #b91c1c;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.admin-panel {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-panel h2 {
+  margin-top: 0;
+}
+
+.upload-card,
+.document-list,
+.admin-hint {
+  margin-top: 16px;
+}
+
+.file-upload {
+  display: grid;
+  gap: 12px;
+  border: 1px dashed #c7d2fe;
+  border-radius: 18px;
+  padding: 18px;
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.file-upload input {
+  display: block;
+}
+
+.document-list {
+  display: grid;
+  gap: 14px;
+}
+
+.document-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 18px;
+  background: #ffffff;
+}
+
+.doc-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.doc-meta {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.doc-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.doc-actions button {
+  border: none;
+  border-radius: 14px;
+  background: #4338ca;
+  color: #ffffff;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.empty-state {
+  color: #6b7280;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-card {
+  width: min(720px, 100%);
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 20px 80px rgba(15, 23, 42, 0.2);
+}
+
+.modal-card h2 {
+  margin-top: 0;
+}
+
+.modal-section {
+  margin-top: 18px;
+}
+
+.modal-note {
+  margin: 20px 0;
+  padding: 16px;
+  border-radius: 18px;
+  background: #f8fafc;
+}
+
+@media (max-width: 900px) {
+  .admin-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .chat-window {
+    max-height: 45vh;
+  }
+
+  .file-upload,
+  .doc-actions {
+    flex-direction: column;
+  }
+}

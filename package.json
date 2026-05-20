@@ -1,0 +1,36 @@
+{
+  "name": "cvht-chatbot",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "cookie": "^0.6.0",
+    "formidable": "^3.5.4",
+    "jose": "^6.2.3",
+    "mammoth": "^1.5.1",
+    "pdf-parse": "^1.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/cookie": "^0.5.1",
+    "@types/formidable": "^3.0.4",
+    "@types/node": "^20.14.2",
+    "@types/pdf-parse": "^1.1.5",
+    "@types/uuid": "^9.0.2",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.37.5",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.1"
+  }
+}
