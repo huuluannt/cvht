@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 {
   "version": 2,
   "builds": [
@@ -28,36 +25,3 @@
     }
   ]
 }
-=======
->>>>>>> e4f9ed8 (full3)
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
-    },
-    {
-      "src": "api/**/*.ts",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1.ts"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
-}
-<<<<<<< HEAD
-=======
->>>>>>> df52ad2 (full2)
->>>>>>> e4f9ed8 (full3)
