@@ -10,8 +10,11 @@ export function sendJson(res: ServerResponse, statusCode: number, payload: unkno
 const SESSION_SECRET = process.env.SESSION_SECRET;
 const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || '').split(',').map((email) => email.trim()).filter(Boolean);
 
-if (!SESSION_SECRET) {
-  throw new Error('SESSION_SECRET is required.');
+function getSessionSecret() {
+  if (!SESSION_SECRET) {
+    throw new Error('SESSION_SECRET is required for admin authentication.');
+  }
+  return new TextEncoder().encode(SESSION_SECRET);
 }
 
 export function getClientIp(req: IncomingMessage) {
@@ -23,7 +26,7 @@ export function getClientIp(req: IncomingMessage) {
 }
 
 export async function signAdminToken(email: string) {
-  const secret = new TextEncoder().encode(SESSION_SECRET);
+  const secret = getSessionSecret();
   return new SignJWT({ email })
     .setProtectedHeader({ alg: 'HS256' })
     .setIssuedAt()
@@ -32,7 +35,7 @@ export async function signAdminToken(email: string) {
 }
 
 export async function verifyAdminToken(token: string) {
-  const secret = new TextEncoder().encode(SESSION_SECRET);
+  const secret = getSessionSecret();
   const { payload } = await jwtVerify(token, secret);
   return payload as { email: string };
 }
